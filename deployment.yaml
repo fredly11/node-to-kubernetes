@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-test
+  labels:
+    app: node-test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-test
+  template:
+    metadata:
+      labels:
+        app: node-test
+    spec:
+      containers:
+      - name: node-test
+        image: us-central1-docker.pkg.dev/true-campus-316316/test-node-app/node-test:2.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
