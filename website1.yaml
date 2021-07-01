@@ -1,9 +1,9 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: node-test
+  name: bluefireleads.com
   namespace: development
-  selfLink: /apis/apps/v1/namespaces/development/deployments/node-test
+  selfLink: /apis/apps/v1/namespaces/development/deployments/bluefireleads.com
   uid: b681a0ee-1d9e-4b5d-b339-48e1a5d7ea0d
   resourceVersion: '1694359'
   generation: 1
@@ -14,7 +14,7 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: '1'
     kubectl.kubernetes.io/last-applied-configuration: >
-      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"webfarm-svc","version":"v1"},"name":"node-test","namespace":"development"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"webfarm-svc","version":"v1"}},"template":{"metadata":{"labels":{"app":"webfarm-svc","version":"v1"}},"spec":{"containers":[{"image":"nginx:alpine","imagePullPolicy":"IfNotPresent","name":"node-test","ports":[{"containerPort":80}]}],"serviceAccountName":"webfarm-sa"}}}}
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"webfarm-svc","version":"v1"},"name":"bluefireleads.com","namespace":"development"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"webfarm-svc","version":"v1"}},"template":{"metadata":{"labels":{"app":"webfarm-svc","version":"v1"}},"spec":{"containers":[{"image":"nginx:alpine","imagePullPolicy":"IfNotPresent","name":"bluefireleads-com","ports":[{"containerPort":80}]}],"serviceAccountName":"webfarm-sa"}}}}
   managedFields:
     - manager: kubectl-client-side-apply
       operation: Update
@@ -49,7 +49,7 @@ metadata:
                 'f:version': {}
             'f:spec':
               'f:containers':
-                'k:{"name":"node-test"}':
+                'k:{"name":"bluefireleads-com"}':
                   .: {}
                   'f:image': {}
                   'f:imagePullPolicy': {}
@@ -117,7 +117,7 @@ spec:
         version: v1
     spec:
       containers:
-        - name: node-test
+        - name: bluefireleads-com
           image: 'nginx:alpine'
           ports:
             - containerPort: 80
@@ -158,4 +158,4 @@ status:
       lastUpdateTime: '2021-05-20T23:59:40Z'
       lastTransitionTime: '2021-05-20T23:59:30Z'
       reason: NewReplicaSetAvailable
-      message: ReplicaSet "node-test-68bdbb8f5c" has successfully progressed.
+      message: ReplicaSet "bluefireleads.com-68bdbb8f5c" has successfully progressed.
